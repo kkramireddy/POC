@@ -96,7 +96,7 @@ public class ProductsControllerTests {
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("$.id", Matchers.is(13860428)))
 				.andExpect(jsonPath("$.name",Matchers.is("The Big Lebowski (Blu-ray)")))
-				.andExpect(jsonPath("$.current_price.price",Matchers.is(22.22)));
+				.andExpect(jsonPath("$.current_price.value",Matchers.is(22.22)));
 	}
 	
 	/*

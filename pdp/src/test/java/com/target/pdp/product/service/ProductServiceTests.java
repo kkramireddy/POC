@@ -92,7 +92,7 @@ public class ProductServiceTests {
 		ProductDetails productDetails = productService.getProductDetails(Long.valueOf(13860428));
 		assertThat(productDetails.getId()).isEqualTo(13860428);
 		assertThat(productDetails.getName()).isEqualTo("The Big Lebowski (Blu-ray)");
-		assertThat(productDetails.getProductPrice().getPrice()).isEqualTo(15.22);
+		assertThat(productDetails.getProductPrice().getValue()).isEqualTo(15.22);
 		assertThat(productDetails.getProductPrice().getCurrencyCode()).isEqualTo("USD");
 		
 	}
@@ -124,7 +124,7 @@ public class ProductServiceTests {
 		ProductDetails productDetails = productService.getProductDetails(Long.valueOf(13860428));
 		assertThat(productDetails.getId()).isEqualTo(13860428);
 		assertThat(productDetails.getName()).isEqualTo("UNKNOWN");
-		assertThat(productDetails.getProductPrice().getPrice()).isEqualTo(15.22);
+		assertThat(productDetails.getProductPrice().getValue()).isEqualTo(15.22);
 		assertThat(productDetails.getProductPrice().getCurrencyCode()).isEqualTo("USD");
 	}
 	

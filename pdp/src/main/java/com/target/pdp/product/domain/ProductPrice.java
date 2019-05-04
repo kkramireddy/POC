@@ -36,6 +36,6 @@ public class ProductPrice {
 	
 	@JsonInclude(Include.NON_NULL)
 	@NotNull(message="{price.NotBlank}")
-	Double price;
+	Double value;
 	
 }

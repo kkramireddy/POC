@@ -1,5 +1,5 @@
 ## TGT PDP RESTFul API
-The intent of this project is to develop API using RESTful architecture style. This API exposes following services
+The intent of this project is to develop API using RESTful architecture style. This Application interacts with another API for getting product description and NO-SQL data store for product price details. The services this API exposes are 
 
 * __/products/{productId} : GET :__  It provides the product details (description and price) for the given product Id.
     * If prodcut is not found, it returns Http Status Code _NOT FOUND_. 
@@ -50,7 +50,7 @@ The intent of this project is to develop API using RESTful architecture style. T
 ```
 ##### Publish SonarQube results
 
-refer [SonarQubeDoc](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Maven) for SonarQube remote server configuration if not running locally
+Refer [SonarQubeDoc](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Maven) for SonarQube remote server configuration if not running locally
 
 Execute command to publish code analysis and coverage report __mvn clean verify sonar:sonar__
 
@@ -61,7 +61,7 @@ Execute command to publish code analysis and coverage report __mvn clean verify 
         * Body content in the format 
                 {
                     "currencyCode":"USD",
-                    "price":"19.22"
+                    "value":"19.22"
                 }
 
 ## Implementation Tasks

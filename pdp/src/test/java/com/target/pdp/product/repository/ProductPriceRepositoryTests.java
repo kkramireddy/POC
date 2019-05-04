@@ -45,7 +45,7 @@ public class ProductPriceRepositoryTests {
 	@Test
 	public void findByIdTest() {
 		ProductPrice price = repository.findById(proudctId).get();
-		log.info(""+price.getPrice());
-		assertThat(price.getPrice()).isEqualTo(22.22);
+		log.info(""+price.getValue());
+		assertThat(price.getValue()).isEqualTo(22.22);
 	}
 }

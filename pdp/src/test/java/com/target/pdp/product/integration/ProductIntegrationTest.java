@@ -90,7 +90,7 @@ public class ProductIntegrationTest {
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("$.id", Matchers.is(13860428)))
 				.andExpect(jsonPath("$.name",Matchers.is("The Big Lebowski (Blu-ray)")))
-				.andExpect(jsonPath("$.current_price.price",Matchers.is(22.22)));
+				.andExpect(jsonPath("$.current_price.value",Matchers.is(22.22)));
 	}
 	
 	/*
@@ -115,7 +115,7 @@ public class ProductIntegrationTest {
 					.andDo(print())
 					.andExpect(status().isOk());
 		ProductPrice productPrice = repository.findById(Long.valueOf(555555)).get();
-		assertThat(productPrice.getPrice()).isEqualTo(99.99);
+		assertThat(productPrice.getValue()).isEqualTo(99.99);
 	}
 
 	/*
