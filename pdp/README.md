@@ -66,9 +66,9 @@ Execute command to publish code analysis and coverage report __mvn clean verify 
 
 ## Implementation Tasks
 * [x] Develop API
-* [x] Develop Unit and Integration testing automation
+* [x] Automate Unit and Integration testing
 * [X] Perform Static Code Analysis using SonarQube
-* [X] Measure automation testing coverage using JaCoCo
+* [X] Measure Automation Testing Coverage using JaCoCo
 * [X] Document API details
 * [ ] Host the API in AWS
 * [ ] Create Postman collection
