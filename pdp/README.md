@@ -34,6 +34,7 @@ The intent of this project is to develop API using RESTful architecture style. T
     4. Git(for cloning)
     5. Postman for API testing
     6. Access to SonarQube(local/remote)
+    7. Project lombok setup for IDE (https://projectlombok.org/)
 #### Run Application in Workstation
 ##### Get Source Code
     1. Clone or download repository
