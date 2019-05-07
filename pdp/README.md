@@ -1,5 +1,5 @@
 ## TGT PDP RESTFul API
-The intent of this project is to develop API using RESTful architecture style. This Application interacts with another API for getting product description and NO-SQL data store for product price details. The services this API exposes are 
+The intent of this project is to develop API using RESTful architecture style. This Application interacts with another API for getting product description and NO-SQL data store for product price details. One version of API is protected using OAuth2.0 standard. The services this API exposes are 
 
 * __/products/{productId} : GET :__  It provides the product details (description and price) for the given product Id.
     * If prodcut is not found, it returns Http Status Code _NOT FOUND_. 
@@ -25,6 +25,7 @@ The intent of this project is to develop API using RESTful architecture style. T
   * Generate Automation Test Coverage reports using JaCoCo library and publish them to SonarQube.
   * Use Spring profile concept to create beans specific to environment.
   * Use Java Lambda features (Streams, functional interface and method reference) in writing code. 
+  * Run the the App and MongoDB as containers on Docker platform.
 
 ## Launch Application
 #### Pre-Requisites
@@ -56,14 +57,21 @@ Refer [SonarQubeDoc](https://docs.sonarqube.org/display/SCAN/Analyzing+with+Sona
 Execute command to publish code analysis and coverage report __mvn clean verify sonar:sonar__
 
 ##### Access the API
-    * Open Postman
-    * Get proudct details : http://localhost:8080/products/{productId} of type GET request
-    * Update product price details : http://localhost:8080/products/{productId} of type PUT request
-        * Body content in the format 
-                {
-                    "currencyCode":"USD",
-                    "value":"19.22"
-                }
+Open Postman
+
+Import Collection by clicking on
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/9d225b99531b071585d2#?env%5Bawsip%5D=W3sia2V5IjoiYWNjZXNzVG9rZW5VUkwiLCJ2YWx1ZSI6Imh0dHBzOi8vZGV2LTk1NjcxMi5va3RhcHJldmlldy5jb20vb2F1dGgyL2RlZmF1bHQvdjEvdG9rZW4iLCJkZXNjcmlwdGlvbiI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiY2xpZW50SWQiLCJ2YWx1ZSI6IjBvYWtvYzN5NzlSdFVqczhuMGg3IiwiZGVzY3JpcHRpb24iOiIiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImNsaWVudFNlY3JldCIsInZhbHVlIjoiTkliaXZUWnNyTVNfQS1xQ3pza2pSYXRpNk04U1FvSnZ6Mk5ZZHg5QiIsImRlc2NyaXB0aW9uIjoiIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJob3N0IiwidmFsdWUiOiJodHRwOi8vNTQuMTc0LjIxLjM0OjgwODAiLCJkZXNjcmlwdGlvbiI6IiIsImVuYWJsZWQiOnRydWV9XQ==)
+
+If the above embedded link doesn't work, use the link [pdpcollection](https://www.getpostman.com/collections/9d225b99531b071585d2). This doesn't include Environment settings.
+
+Select the Environment __awsapi__ for environment variables used in Collection.
+
+For secured API access, select Authorization type as "OAuth2.0" and configure GetNewAccessToken details with Environment variables provided in __awsapi__ and obtain a token before submitting a request.
+
+##### App Docker Image
+```
+docker pull kkramireddy/pdp:latest
+```
 
 ## Implementation Tasks
 * [x] Develop API
@@ -71,5 +79,5 @@ Execute command to publish code analysis and coverage report __mvn clean verify 
 * [X] Perform Static Code Analysis using SonarQube
 * [X] Measure Automation Testing Coverage using JaCoCo
 * [X] Document API details
-* [ ] Host the API in AWS
-* [ ] Create Postman collection
+* [X] Host the containerized API and MongoDB in AWS
+* [X] Create Postman Collection
