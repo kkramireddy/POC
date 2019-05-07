@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import lombok.AllArgsConstructor;
@@ -32,6 +33,7 @@ public class ProductPrice {
 	@Field(value="currency_code")
 	@JsonInclude(Include.NON_NULL)
 	@NotBlank(message="{currency.NotBlank}")
+	@JsonProperty("currency_code")
 	String currencyCode;
 	
 	@JsonInclude(Include.NON_NULL)
